@@ -1,0 +1,60 @@
+@import '../../../src/scss/environment/settings/typography';
+@import '../../../src/scss/components';
+@import '../../../src/scss/units';
+
+html {
+  font-family: $nhs-font-stack;
+}
+
+.docs-colours {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.docs-colours__colour {
+  border: 1px solid rgba(#000, .2);
+  margin: 5px;
+  position: relative;
+  color: #fff;
+}
+
+.docs-colours__preview {
+  height: 200px;
+  width: 200px;
+}
+
+.docs-colours__name {
+  font-size: .9em;
+  padding: 5px 10px;
+  display: block;
+  position: absolute;
+  top: 0;
+  background: rgba(#000, .5);
+}
+.docs-colours__value {
+  font-size: .9em;
+  padding: 5px 10px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: rgba(#000, .5);
+}
+
+.example {
+  margin: 56px 0 20px;
+  padding: 5px;
+  border: 1px solid #ddd;
+
+  &::before {
+    content: 'Example';
+    background: #eee;
+    position: absolute;
+    margin: -36px 0 0 -6px;
+    padding: 5px 10px;
+    line-height: 20px;
+  }
+}

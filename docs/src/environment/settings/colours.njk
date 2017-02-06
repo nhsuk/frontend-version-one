@@ -1,0 +1,13 @@
+<ul class="docs-colours">
+{% for name, hex in colours %}
+  <li class="docs-colours__colour">
+    <div class="docs-colours__preview" style="background-color: {{hex}}"></div>
+    <span class="docs-colours__name">
+      {{ name }}
+    </span>
+    <span class="docs-colours__value">
+      {{ hex }}
+    </span>
+  </li>
+{% endfor %}
+</ul>

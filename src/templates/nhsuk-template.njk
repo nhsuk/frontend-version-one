@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    {% block head %}
+      {% include '_includes/head.njk' %}
+    {% endblock %}
+    <script>(function(d){d.className=d.className.replace(/\bno-js\b/,'js-enabled')})(document.documentElement);</script>
+  </head>
+
+  <body>
+    <main id="content" role="main" tabindex="-1" class="util-nofocus">
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>

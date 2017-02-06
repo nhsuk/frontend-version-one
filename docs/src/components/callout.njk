@@ -1,0 +1,13 @@
+{% for callout in callouts %}
+  {% if callout.children %}
+    <div class="example">
+      <div class="{{ callout.type }} {{ callout.type + '--' + callout.variant if callout.variant}}">
+        {% for child in callout.children %}
+          <div>
+            {{ child.value }}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+{% endfor %}
