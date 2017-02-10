@@ -1,0 +1,25 @@
+{% from '_macros.nunjucks' import example %}
+
+{% call example('details') %}
+  <details>
+    <summary>Results</summary>
+    <ul>
+      <li>Lorem ipsum</li>
+      <li>dolor sit amet</li>
+      <li>consectetur adipisicing elit</li>
+      <li>sed do eiusmod tempor incididunt</li>
+    </ul>
+  </details>
+{% endcall %}
+
+{% call example('details--inline') %}
+  <details class="details--inline">
+    <summary>Results</summary>
+    <ul>
+      <li>Lorem ipsum</li>
+      <li>dolor sit amet</li>
+      <li>consectetur adipisicing elit</li>
+      <li>sed do eiusmod tempor incididunt</li>
+    </ul>
+  </details>
+{% endcall %}

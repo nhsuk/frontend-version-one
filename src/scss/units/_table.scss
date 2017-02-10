@@ -1,0 +1,26 @@
+@import "../environment/settings/semantic-colours";
+@import "../environment/tools/typography";
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: ($baseline-grid-unit * 4) 0 ($baseline-grid-unit * 8);
+  width: 100%;
+
+  th,
+  td {
+    @include core-font(16);
+    border-bottom: 2px solid $grey-3;
+    padding: ($baseline-grid-unit * 3) ($baseline-grid-unit * 3) ($baseline-grid-unit * 3) 0;
+    vertical-align: top;
+  }
+
+  th {
+    @include bold-font(20);
+    text-align: left;
+  }
+}
+
+.table--two-column th {
+  width: 50%;
+}
