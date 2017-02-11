@@ -7,17 +7,23 @@ This is an experiment. Work in progress which breaks often and updated without w
 Run local docs server:
 
 ```bash
-npm run docs:serve
+npm run dev
+```
+
+Build frontend:
+
+```bash
+npm run build
 ```
 
 Build docs for deployment:
 
 ```bash
-npm run docs:build
+npm run fractal:build
 ```
 
 Build and deploy docs to GitHub pages:
 
 ```bash
-npm run docs:deploy
+npm run deploy
 ```
