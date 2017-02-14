@@ -1,6 +1,8 @@
+@import "../environment/settings/semantic-colours";
+@import "../environment/tools/typography";
+
 .button {
   @include bold-font(20);
-  @include element-spacing;
 
   appearance: none;
   background-color: $button-background;
@@ -14,12 +16,20 @@
   width: 100%;
 
   @include media(tablet) {
-    margin-right: $default-spacing-unit;
     width: auto;
   }
 
-  @include media(desktop) {
-    margin-right: $default-spacing-unit * 2;
+  + .button {
+    margin-top: $default-spacing-unit;
+
+    @include media(tablet) {
+      margin-left: $default-spacing-unit;
+      margin-top: 0;
+    }
+
+    @include media(desktop) {
+      margin-left: $default-spacing-unit * 2;
+    }
   }
 
   &:link,
@@ -33,6 +43,11 @@
 
   &:focus {
     outline: 3px solid $focus-colour;
+  }
+
+  &[disabled] {
+    opacity: 0.4;
+    cursor: default;
   }
 }
 
