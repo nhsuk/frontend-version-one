@@ -8,7 +8,7 @@ to be used on different projects within NHS Digital.
 The package is meant to have everything you need to start building websites or services
 for NHS Digial.
  
-It contains a [living style guide](https://nhsuk.github.io/nhsuk-frontend/) (powered by [Fractal](http://fractal.build/)).
+It contains a [living style guide](https://nhsuk.github.io/frontend/) (powered by [Fractal](http://fractal.build/)).
 It shows the usage of individual components and additional instructions. 
 
 ## Development
@@ -42,7 +42,7 @@ npm run deploy
 It assumes that your front-end is a Node app with Nunjucks templates and Sass. Install this package with NPM:
 
 ```
-npm install nhsuk/nhsuk-frontend -=save
+npm install nhsuk/frontend -=save
 ```
 
 ### Styles
