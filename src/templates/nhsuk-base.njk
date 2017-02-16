@@ -24,11 +24,7 @@
         <!-- Touch Icons - iOS and Android 2.1+ 180x180 pixels in size. -->
         <link rel="apple-touch-icon" href="{{ asset_path('assets/images/apple-touch-icon.png') }}">
         <!-- Firefox, Chrome, Safari, IE 11+ and Opera. 192x192 pixels in size. -->
-        {% if previewRevisionId -%}
-          <link rel="icon" href="{{ asset_path('assets/images/favicon-preview.png') }}">
-        {% else %}
-          <link rel="icon" href="{{ asset_path('assets/images/favicon.png') }}">
-        {% endif -%}
+        <link rel="icon" href="{{ asset_path('assets/images/favicon.png') }}">
       {% endblock %}
 
       {% block head_meta %}
