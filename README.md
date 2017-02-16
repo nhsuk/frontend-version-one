@@ -65,7 +65,7 @@ Import everything:
 
 Include the compiled css in the head of your page:
 
-```
+```html
 <link href="[your asset path]/nhsuk.css" media="screen" rel="stylesheet" type="text/css">
 ```
 
