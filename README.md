@@ -1,15 +1,15 @@
-# NHS.UK Frontend
+# NHS.UK Frontend (Alpha)
 
-This project is an **alpha** version of NHS.UK reusable front-end components and styles
-to be used on different projects within NHS Digital.
+This project is an **alpha** version of reusable front-end components and styles
+to be used for products and services that will live on NHS.UK.
 
 ## What's it for
 
-The package is meant to have everything you need to start building websites or services
-for NHS Digial.
- 
+The package is meant to have everything you need to start building websites or
+services for NHS.UK.
+
 It contains a [living style guide](https://nhsuk.github.io/frontend/) (powered by [Fractal](http://fractal.build/)).
-It shows the usage of individual components and additional instructions. 
+It shows the usage of individual components and additional instructions.
 
 ## Development
 
@@ -42,7 +42,7 @@ npm run deploy
 It assumes that your front-end is a Node app with Nunjucks templates and Sass. Install this package with NPM:
 
 ```
-npm install nhsuk/frontend -=save
+npm install nhsuk/frontend --save
 ```
 
 ### Styles
@@ -57,16 +57,22 @@ Include individual styles in your Sass:
 @import "nhsuk-frontend/dist/scss/components/button";
 ```
 
-Or import the compiled CSS:
+Import everything:
 
 ```scss
-@import "nhsuk-frontend/dist/css/nhsuk";
+@import "nhsuk-frontend/dist/scss/nhsuk";
+```
+
+Include the compiled css in the head of your page:
+
+```
+<link href="[your asset path]/nhsuk.css" media="screen" rel="stylesheet" type="text/css">
 ```
 
 ### Templates
 
 Configure Nunjucks to add this package's template path to your Nunjucks environment:
- 
+
  ```js
  const path = require('path');
 const nunjucksEnv = nunjucks.configure([
@@ -103,4 +109,4 @@ that can be overridden or extended from your template:
 - `messages` - wraps cookie message container, above `site_header`, after `skiplinks`
 - `content` - placeholder for main content, inside `main#content`
 - `site_footer` - wraps site footer block, inside `body > footer`
- - `foot` - last placeholder before the end of `body` tag 
+ - `foot` - last placeholder before the end of `body` tag
