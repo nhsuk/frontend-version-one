@@ -34,7 +34,10 @@ gulp.task('clean:fractal', () => {
 })
 
 gulp.task('copy:styles:dist', () => {
-  return gulp.src(`${paths.srcScss}/**/*.scss`)
+  return gulp.src([
+    `${paths.srcScss}/**/*.scss`,
+    `!${paths.srcScss}/components/**/*.scss`
+  ])
     .pipe(gulp.dest(paths.distScss))
 })
 
