@@ -29,6 +29,9 @@ const md = require('markdown-it')({
   .use(mdFootnote)
 
 const nunjucks = require('@frctl/nunjucks')({
+  globals: {
+    asset_path: filename => `${buildPathPrefix}/${filename}`
+  },
   filters: {
     markdown(str) {
       return md.render(str)
