@@ -40,6 +40,7 @@
     "build": "gulp build",
     "dev": "fractal start --sync --port 4000",
     "fractal:build": "NODE_ENV=production fractal build && node ./fractal/create-redirect.js",
-    "deploy": "npm run fractal:build && gh-pages --add -d 'build'"
+    "deploy": "npm run fractal:build && gh-pages --add -d 'build'",
+    "postinstall": "npm run build"
   }
 }
