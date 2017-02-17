@@ -1,2 +1,8 @@
 .Header {
   background-color: #0072c6; }
+
+[dir="ltr"] .Tree-collectionLabel span::before {
+  left: -2px;
+  top: 0;
+  bottom: 0;
+  margin: auto; }
