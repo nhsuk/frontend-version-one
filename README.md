@@ -94,19 +94,14 @@ that can be overridden or extended from your template:
 
 **Nunjucks blocks**
 
-- `head` - wraps the inside of the whole `head` element
-  - `head_title` - wraps `title` element
-  - `head_cdn_prefetch` - wraps dns-prefetch `link` tags
-  - `head_favicon` - wraps favicons and touch icons
-  - `head_meta` - wraps various `meta` tags
-    - `head_meta_opegraph` - reserved for OpenGraph `meta` tags
-    - `head_meta_twitter` - reserved for Twitter `meta` tags
-  - `head_stylesheets` - wraps stylesheets
-  - `head_scripts` - wraps head scripts
-    - `head_scripts_polyfills` - wraps head scripts polyfills (e.g. picturefill)
-  - `head_tracking` - reserved for tracking scripts in the head
-- `skiplinks` - wraps container with "skip to content" link, first element inside `body`
-- `messages` - wraps cookie message container, above `site_header`, after `skiplinks`
-- `content` - placeholder for main content, inside `main#content`
-- `site_footer` - wraps site footer block, inside `body > footer`
- - `foot` - last placeholder before the end of `body` tag
+- `head` - contains the whole `head` element
+  - `head_title_content` - contains `title` element content
+  - `head_content` - wraps main content for `head` element
+  - `head_stylesheets` - wraps stylesheet declarations
+- `body` - contains the whole `body` element
+  - `body_skiplinks` - wraps container with "skip to content" link (first element inside `body`)
+  - `body_notifications` - wraps cookie message container (above `site_header`, after `skiplinks`)
+  - `body_site_header` - wraps site header
+  - `body_main_content` - contains main content (inside `main#content`)
+  - `body_footer` - wraps site footer container (inside `body > footer`)
+    - `body_footer_content` - contains content inside site footer

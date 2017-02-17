@@ -6,122 +6,78 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-      {% block head_title %}
-        <title>{{ title }} - NHS.UK</title>
-      {% endblock %}
+      <title>{% block head_title_content %}{{ title }} - NHS.UK{% endblock %}</title>
 
-      {% block head_dns_prefetch %}
-        {% if CDN_HOST -%}
-          <link href="{{ CDN_HOST }}" rel="dns-prefetch">
-        {% endif -%}
-        {% if FONT_CDN_HOST != '/' -%}
-          <link href="{{ FONT_CDN_HOST }}" rel="dns-prefetch">
-        {% endif -%}
-      {% endblock %}
-
-      {% block head_favicon %}
+      {% block head_content %}
         <!--[if IE]><link rel="shortcut icon" href="{{ asset_path('assets/images/favicon.ico') }}"><![endif]-->
         <!-- Touch Icons - iOS and Android 2.1+ 180x180 pixels in size. -->
         <link rel="apple-touch-icon" href="{{ asset_path('assets/images/apple-touch-icon.png') }}">
         <!-- Firefox, Chrome, Safari, IE 11+ and Opera. 192x192 pixels in size. -->
         <link rel="icon" href="{{ asset_path('assets/images/favicon.png') }}">
       {% endblock %}
-
-      {% block head_meta %}
-        {% if description %}
-          <meta name="description" content="{{ description }}">
-        {% endif %}
-        {% block head_meta_opegraph %}
-        {% endblock %}
-        {% block head_meta_twitter %}
-        {% endblock %}
-      {% endblock %}
-
       {% block head_stylesheets %}
-        {% if font %}
-          <!--[if gt IE 8]><!--><link href="{{ asset_path('assets/stylesheets/nhsuk-' + font + '.css') }}" media="screen" rel="stylesheet" type="text/css"><!--<![endif]-->
-          <!--[if IE 6]><link href="{{ asset_path('assets/stylesheets/nhsuk-ie6-' + font + '.css') }}" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
-          <!--[if IE 7]><link href="{{ asset_path('assets/stylesheets/nhsuk-ie7-' + font + '.css') }}" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
-          <!--[if IE 8]><link href="{{ asset_path('assets/stylesheets/nhsuk-ie8-' + font + '.css') }}" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
-        {% else %}
-          <!--[if gt IE 8]><!--><link href="{{ asset_path('assets/stylesheets/nhsuk.css') }}" media="screen" rel="stylesheet" type="text/css"><!--<![endif]-->
-          <!--[if IE 6]><link href="{{ asset_path('assets/stylesheets/nhsuk-ie6.css') }}" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
-          <!--[if IE 7]><link href="{{ asset_path('assets/stylesheets/nhsuk-ie7.css') }}" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
-          <!--[if IE 8]><link href="{{ asset_path('assets/stylesheets/nhsuk-ie8.css') }}" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
-        {% endif %}
-        <link rel="stylesheet" href="{{ asset_path('assets/stylesheets/nhsuk-print.css') }}" media="print" type="text/css">
-      {% endblock %}
-
-      {% block head_scripts %}
-        <!--[if lt IE 9]>
-          <script src="{{ asset_path('assets/javascripts/ie.bundle.js') }}" type="text/javascript"></script>
-        <![endif]-->
-        {% block head_scripts_polyfills %}
-          <script async src="{{ asset_path('assets/javascripts/picturefill.bundle.js') }}" type="text/javascript"></script>
-        {% endblock %}
-      {% endblock %}
-
-      {% block head_tracking %}
+        <link rel="stylesheet" href="{{ asset_path('assets/css/nhsuk.css') }}" media="screen" type="text/css">
       {% endblock %}
     {% endblock %}
     <script>(function(d){d.className=d.className.replace(/\bno-js\b/,'js-enabled')})(document.documentElement)</script>
   </head>
 
   <body>
-    {% block skiplinks %}
-      <div class="skiplinks">
-        <div class="skiplinks__inner">
-          <a href="#content" class="skiplinks__link">Skip to main content</a>
-        </div>
-      </div>
-    {% endblock %}
-
-    {% block messages %}
-      <div class="notification-banner notification-banner--js-hidden util-print-hide" id="global-cookies-banner" role="alert">
-        <p class="notification-banner__inner">
-          NHS.UK uses cookies to make the site simpler.
-          <a href="/help/cookies">Find out more about cookies</a>
-        </p>
-      </div>
-    {% endblock %}
-
-    {% block site_header %}
-      <header role="banner">
-        <div class="global-header">
-          <div class="global-header__inner">
-            <a href="/" class="global-header__link">
-              <img src="{{ asset_path('assets/images/logotype-nhs-mono.png') }}" alt="NHS">
-            </a>
-          </div>
-        </div>
-      </header>
-    {% endblock %}
-
-    <main id="content" role="main">
-      {% block content %}{% endblock %}
-    </main>
-
-    <footer role="contentinfo">
-      {% block site_footer %}
-        <div class="global-footer">
-          <div class="global-footer__inner">
-            <div>
-              <h2 class="util-visuallyhidden">Support links</h2>
-              <ul class="link-list">
-                <li>
-                  <a href="/help/clinical-assurance">Clinical assurance</a>
-                </li>
-                <li>
-                  <a href="/help/cookies">Cookies</a>
-                </li>
-              </ul>
-            </div>
+    {% block body %}
+      {% block body_skiplinks %}
+        <div class="skiplinks">
+          <div class="skiplinks__inner">
+            <a href="#content" class="skiplinks__link">Skip to main content</a>
           </div>
         </div>
       {% endblock %}
-    </footer>
 
-    {% block foot %}
+      {% block body_notifications %}
+        <div class="notification-banner notification-banner--js-hidden util-print-hide" id="global-cookies-banner" role="alert">
+          <p class="notification-banner__inner">
+            NHS.UK uses cookies to make the site simpler.
+            <a href="/help/cookies">Find out more about cookies</a>
+          </p>
+        </div>
+      {% endblock %}
+
+      {% block body_site_header %}
+        <header role="banner">
+          <div class="global-header">
+            <div class="global-header__inner">
+              <a href="/" class="global-header__link">
+                <img src="{{ asset_path('assets/images/logotype-nhs-mono.png') }}" alt="NHS">
+              </a>
+            </div>
+          </div>
+        </header>
+      {% endblock %}
+
+      <main id="content" role="main">
+        {% block body_main_content %}{% endblock %}
+      </main>
+
+      {% block body_footer %}
+        <footer role="contentinfo">
+          <div class="global-footer">
+            <div class="global-footer__inner">
+              <div>
+                {% block body_footer_content %}
+                  <h2 class="util-visuallyhidden">Support links</h2>
+                  <ul class="link-list">
+                    <li>
+                      <a href="/help/clinical-assurance">Clinical assurance</a>
+                    </li>
+                    <li>
+                      <a href="/help/cookies">Cookies</a>
+                    </li>
+                  </ul>
+                {% endblock %}
+              </div>
+            </div>
+          </div>
+        </footer>
+      {% endblock %}
     {% endblock %}
   </body>
 </html>
