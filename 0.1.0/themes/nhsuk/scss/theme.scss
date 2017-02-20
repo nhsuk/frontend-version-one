@@ -1,0 +1,12 @@
+@import '../../../src/scss/environment/settings/semantic-colours';
+
+.Header {
+  background-color: $nhs-blue;
+}
+
+[dir="ltr"] .Tree-collectionLabel span::before {
+  left: -2px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
