@@ -1,5 +1,6 @@
 @import "../environment/settings/semantic-colours";
 @import "../environment/settings/typography";
+@import "../environment/tools/mixins";
 
 .global-footer {
   background-color: $nhs-blue;
