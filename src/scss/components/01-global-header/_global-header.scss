@@ -19,7 +19,7 @@
 }
 
 .global-header__link {
-  background: url("../images/logotype-nhs-colour__reverse.png") no-repeat;
+  background: url("../../assets/images/logotype-nhs-colour__reverse.png") no-repeat;
   background-size: contain;
   display: block;
   height: 32px;
@@ -27,7 +27,7 @@
   width: 79px;
 
   @media(min-resolution: 192dpi) {
-    background-image: url("../images/logotype-nhs-colour__reverse@2x.png");
+    background-image: url("../../assets/images/logotype-nhs-colour__reverse@2x.png");
     background-size: 79px 32px;
   }
 }
