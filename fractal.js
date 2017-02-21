@@ -1,22 +1,13 @@
 const path = require('path')
 const fractal = require('@frctl/fractal').create()
 const packageMeta = require('./package')
+const nhsCustomTheme = require('./fractal/theme')
 
 const buildPathPrefix = (process.env.NODE_ENV === 'production' ? `/${packageMeta.version}` : '')
 const paths = {
   dist: `${__dirname}/dist`,
   src: `${__dirname}/src`
 }
-
-// Appearance config
-const customTheme = require('@frctl/mandelbrot')({
-  lang: 'en-gb',
-  styles: ['default', '/themes/nhsuk/css/theme.css'],
-  nav: ['docs', 'components'],
-  panels: ['html', 'context', 'resources', 'info']
-})
-
-customTheme.addStatic(path.join(__dirname, 'fractal/theme'), '/themes/nhsuk')
 
 const mdAbbr = require('markdown-it-abbr')
 const mdFootnote = require('markdown-it-footnote')
@@ -64,7 +55,7 @@ fractal.docs.set('ext', '.md')
 fractal.docs.set('path', `${paths.src}/docs`)
 
 // Web UI config
-fractal.web.theme(customTheme)
+fractal.web.theme(nhsCustomTheme)
 fractal.web.set('static.path', paths.dist);
 fractal.web.set('builder.dest', path.join(__dirname, `build`, buildPathPrefix));
 

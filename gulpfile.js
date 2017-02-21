@@ -18,7 +18,7 @@ const paths = {
   distAssets: `${__dirname}/dist/assets`,
   distScss: `${__dirname}/dist/scss`,
   fractalScss: `${__dirname}/fractal/theme/scss`,
-  fractalCss: `${__dirname}/fractal/theme/css`,
+  fractalAssets: `${__dirname}/fractal/theme/assets`,
 }
 
 gulp.task('clean', () => {
@@ -30,7 +30,7 @@ gulp.task('clean:dist', () => {
 })
 
 gulp.task('clean:fractal', () => {
-  return del([`${paths.fractalCss}/`])
+  return del([`${paths.fractalAssets}/*.css`])
 })
 
 gulp.task('copy:styles:dist', () => {
@@ -70,7 +70,7 @@ gulp.task('inject:styles:dist', () => {
 gulp.task('compile:styles:fractal', () => {
   return gulp.src(`${paths.fractalScss}/**/*.scss`)
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest(paths.fractalCss))
+    .pipe(gulp.dest(`${paths.fractalAssets}`))
 })
 
 gulp.task('compile:styles:dist', () => {
