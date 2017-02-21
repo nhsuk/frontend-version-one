@@ -781,6 +781,112 @@ table {
       background-image: url("../../assets/images/logotype-nhs-colour__reverse@2x.png");
       background-size: 79px 32px; } }
 
+.local-header {
+  margin: 0 16px;
+  max-width: 960px;
+  padding: 16px;
+  margin-top: 16px;
+  background-color: #0072c6;
+  padding-top: 32px; }
+  @media (min-width: 925px) {
+    .local-header {
+      margin: 0 32px; } }
+  @media (min-width: 1024px) {
+    .local-header {
+      margin: 0 auto; } }
+  @media (min-width: 925px) {
+    .local-header {
+      padding: 32px; } }
+  @media (min-width: 925px) {
+    .local-header {
+      margin-top: 32px; } }
+  @media (min-width: 641px) {
+    .local-header {
+      padding-top: 32px; } }
+  @media (min-width: 925px) {
+    .local-header {
+      padding-top: 48px; } }
+  .grid-row .local-header {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0; }
+  .local-header a:link {
+    color: #fff; }
+  .local-header a:visited {
+    color: #fff; }
+  .local-header a:hover {
+    color: #d4efff; }
+  .local-header a:active {
+    color: #d4efff; }
+  .local-header a:focus {
+    outline: 3px solid #ffb81c; }
+  .local-header * + * {
+    margin-top: 16px; }
+    @media (min-width: 925px) {
+      .local-header * + * {
+        margin-top: 32px; } }
+
+.local-header__return {
+  background-color: #0072c6;
+  border: 2px solid #338ed1;
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  text-decoration: none; }
+  .local-header__return:link {
+    color: #fff; }
+  .local-header__return:visited {
+    color: #fff; }
+  .local-header__return:hover {
+    color: #d4efff; }
+  .local-header__return:active {
+    color: #d4efff; }
+  .local-header__return:focus {
+    outline: 3px solid #ffb81c; }
+  .local-header__return:hover {
+    border-color: #99c7e8;
+    color: #fff; }
+
+.local-header__title {
+  font-family: Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 40px;
+  text-transform: none;
+  color: #fff;
+  margin: 0; }
+  @media (min-width: 641px) {
+    .local-header__title {
+      font-size: 32px;
+      line-height: 48px; } }
+  @media (min-width: 925px) {
+    .local-header__title {
+      font-size: 36px;
+      line-height: 48px; } }
+  @media (min-width: 641px) {
+    .local-header__title {
+      padding-top: 16px; } }
+
+.local-header__intro {
+  color: #fff;
+  margin-top: 16px;
+  max-width: 40em;
+  padding-top: 16px;
+  position: relative; }
+  @media (min-width: 925px) {
+    .local-header__intro {
+      margin-top: 32px;
+      padding-top: 16px; } }
+  .local-header__intro:before {
+    background-color: #338ed1;
+    content: "";
+    display: block;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: -2px;
+    width: 130px; }
+
 .notification-banner {
   background-color: #eff1f2; }
   .notification-banner * {
