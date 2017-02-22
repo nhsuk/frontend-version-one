@@ -28,7 +28,7 @@ npm run build
 Build docs for deployment:
 
 ```bash
-npm run fractal:build
+npm run build:docs
 ```
 
 Build and deploy docs to GitHub pages:
