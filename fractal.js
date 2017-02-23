@@ -9,37 +9,12 @@ const paths = {
   src: `${__dirname}/src`
 }
 
-// Markdown config
-const mdAbbr = require('markdown-it-abbr')
-const mdFootnote = require('markdown-it-footnote')
-const md = require('markdown-it')({
-  html: true,
-  xhtmlOut: true,
-  typographer: true,
-})
-  .use(mdAbbr)
-  .use(mdFootnote)
-
 // Nunjucks config
 const nunjucks = require('@frctl/nunjucks')({
   globals: {
     asset_path: filename => `${buildPathPrefix}/${filename}`
   },
-  paths: ['src/templates'],
-  filters: {
-    markdown(str) {
-      return md.render(str)
-    },
-    markdownInline(str) {
-      return md.renderInline(str)
-    },
-    slugify(str) {
-      return str.toLowerCase().replace(/[^\w]+/g, '')
-    },
-    stringify() {
-      return JSON.stringify(this, null, 2)
-    },
-  }
+  paths: ['src/templates']
 })
 
 // Project config
