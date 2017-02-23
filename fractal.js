@@ -23,6 +23,7 @@ const nunjucks = require('@frctl/nunjucks')({
   globals: {
     asset_path: filename => `${buildPathPrefix}/${filename}`
   },
+  paths: ['src/templates'],
   filters: {
     markdown(str) {
       return md.render(str)
