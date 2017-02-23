@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <link rel="stylesheet" href="{{ '/assets/css/nhsuk.css' | path }}"/>
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js-enabled');
+  </script>
+  <style>
+    html {
+      background-color: #fff;
+      height: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+    body {
+      padding: .1px;
+    }
+    html:hover {
+      background-image:
+        linear-gradient(45deg, rgba(0,0,0,.06) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.06) 75%, rgba(0,0,0,.06)),
+        linear-gradient(45deg, rgba(0,0,0,.06) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.06) 75%, rgba(0,0,0,.06));
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px
+    }
+    html:hover body {
+      box-shadow: inset 0 0 0 1px #e6e6e6;
+    }
+  </style>
+</head>
+<body>
+  {{ yield }}
+</body>
+</html>

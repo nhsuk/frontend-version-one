@@ -1,3 +1,5 @@
 node_modules/
 *.log
-docs/build/
+build/
+dist/
+fractal/theme/assets/*.css

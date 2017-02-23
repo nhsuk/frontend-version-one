@@ -1,0 +1,12 @@
+<header class="Masthead">
+  <div class="Masthead-container">
+    <div class="Masthead-brand">
+      <a href="{{ path('/') }}">
+        <img class="Masthead-logo" src="{{ path('/themes/nhsuk/nhs.svg') }}">
+        <span class="Masthead-title">
+          Frontend
+        </span>
+      </a>
+    </div>
+  </div>
+</header>

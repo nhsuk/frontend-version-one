@@ -1,0 +1,58 @@
+@import "../settings/grid-layout";
+
+/// Grid column
+/// -----------
+/// Creates a cross browser grid column with a standardised gutter between the
+/// columns.
+///
+/// @prop {number} width - a fraction of what width to create column
+/// @prop {string} full-width [tablet] - at what point to break to full width
+/// @prop {string} float [left] - which way to float column (left/right)
+///
+/// @example scss - Column one quarter of container
+///   div {
+///     @include grid-column(1 / 4);
+///   }
+///
+/// @example scss - Column one half of container
+///   div {
+///     @include grid-column(1 / 2);
+///   }
+///
+/// @example scss - Forcing column to be full width at desktop
+///   div {
+///     @include grid-column(1 / 2, $full-width: desktop);
+///   }
+///
+/// @example scss - Float column to the right
+///   div {
+///     @include grid-column(1 / 2, $float: right);
+///   }
+@mixin grid-column($width, $full-width: desktop, $float: left) {
+  display: block;
+  padding: 0 ($gutter / 2);
+
+  @include media($full-width) {
+    float: $float;
+    width: percentage($width);
+  }
+
+  @include ie-lte(7) {
+    width: (($site-width + $gutter) * $width) - $gutter;
+  }
+}
+
+
+@mixin grid-row {
+  @include clearfix;
+  margin: 0 (-($gutter / 2));
+
+  @include media(desktop) {
+    .page-section &,
+    .local-header & {
+      > * {
+        margin-top: 0;
+      }
+    }
+  }
+}
