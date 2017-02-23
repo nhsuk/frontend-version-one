@@ -12,7 +12,10 @@ const paths = {
 // Nunjucks config
 const nunjucks = require('@frctl/nunjucks')({
   globals: {
-    asset_path: filename => `${buildPathPrefix}/${filename}`
+    asset_path: function(filename) {
+      filename = filename.replace(/^(\w)/, '/$1')
+      return require('@frctl/nunjucks/src/filters/path')(fractal).bind(this)(filename)
+    }
   },
   paths: ['src/templates']
 })
