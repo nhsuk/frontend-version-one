@@ -1,3 +1,4 @@
+order: 7
 variants:
 - name: info
   context:
