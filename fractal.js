@@ -9,6 +9,7 @@ const paths = {
   src: `${__dirname}/src`
 }
 
+// Markdown config
 const mdAbbr = require('markdown-it-abbr')
 const mdFootnote = require('markdown-it-footnote')
 const md = require('markdown-it')({
@@ -19,6 +20,7 @@ const md = require('markdown-it')({
   .use(mdAbbr)
   .use(mdFootnote)
 
+// Nunjucks config
 const nunjucks = require('@frctl/nunjucks')({
   globals: {
     asset_path: filename => `${buildPathPrefix}/${filename}`
@@ -47,7 +49,7 @@ fractal.set('project.title', 'NHS.UK Frontend')
 fractal.components.engine(nunjucks)
 fractal.components.set('default.preview', '@preview')
 fractal.components.set('default.status', null);
-fractal.components.set('ext', '.html')
+fractal.components.set('ext', '.njk')
 fractal.components.set('path', `${paths.src}/scss/components`)
 
 // Docs config
@@ -60,5 +62,4 @@ fractal.web.theme(nhsCustomTheme)
 fractal.web.set('static.path', paths.dist);
 fractal.web.set('builder.dest', path.join(__dirname, `build`, buildPathPrefix));
 
-// Export config
 module.exports = fractal
