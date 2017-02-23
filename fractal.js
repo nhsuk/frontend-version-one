@@ -37,7 +37,7 @@ fractal.docs.set('path', `${paths.src}/docs`)
 
 // Web UI config
 fractal.web.theme(nhsCustomTheme)
-fractal.web.set('static.path', paths.dist);
-fractal.web.set('builder.dest', path.join(__dirname, `build`, buildPathPrefix));
+fractal.web.set('static.path', paths.dist)
+fractal.web.set('builder.dest', path.join(__dirname, `build`, buildPathPrefix))
 
 module.exports = fractal
