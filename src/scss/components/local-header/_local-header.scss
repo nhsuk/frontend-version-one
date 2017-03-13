@@ -1,6 +1,5 @@
 @import "../environment/settings/colours";
-@import "../environment/tools/mixins";
-@import "../environment/tools/typography";
+@import "../environment/tools/mixins/typography";
 
 .local-header {
   @include site-width-container;

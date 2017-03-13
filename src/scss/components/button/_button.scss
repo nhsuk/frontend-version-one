@@ -1,4 +1,4 @@
-@import "../environment/tools/button";
+@import "../environment/tools/mixins/button";
 
 .button {
   @include button($green);
