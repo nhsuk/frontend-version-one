@@ -1,11 +1,13 @@
 @import "../environment/settings/colours";
 @import "../environment/tools/typography";
 
+$_button-background: $green;
+
 .button {
   @include bold-font(20);
 
   appearance: none;
-  background-color: $button-background;
+  background-color: $_button-background;
   border: 0;
   color: $white;
   cursor: pointer;
@@ -36,7 +38,7 @@
   &:hover,
   &:focus,
   &:visited {
-    background-color: $button-background;
+    background-color: $_button-background;
     color: $white;
     text-decoration: none;
   }
