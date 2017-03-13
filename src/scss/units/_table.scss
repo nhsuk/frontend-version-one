@@ -10,7 +10,7 @@ table {
   th,
   td {
     @include core-font(16);
-    border-bottom: 2px solid $grey-3;
+    border-bottom: 2px solid $grey-4;
     padding: ($baseline-grid-unit * 3) ($baseline-grid-unit * 3) ($baseline-grid-unit * 3) 0;
     vertical-align: top;
   }

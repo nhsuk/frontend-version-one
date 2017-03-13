@@ -1,7 +1,7 @@
 @import "../environment/settings/colours";
 
 .skiplinks {
-  background-color: tint($blue, 65%);
+  background-color: $blue-10;
 }
 
 .skiplinks__inner {
@@ -16,7 +16,7 @@
   position: absolute;
 
   &:focus {
-    background-color: tint($blue, 95%);
+    background-color: $blue-10;
     border: 3px solid $yellow;
     outline: none;
     position: static;

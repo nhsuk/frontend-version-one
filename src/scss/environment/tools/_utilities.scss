@@ -1,5 +1,4 @@
 @import "mixins";
-@import "functions";
 
 .util-visuallyhidden {
   @include visuallyhidden;
@@ -10,7 +9,7 @@
 }
 
 .util-bg-tint__yellow {
-  background-color: tint($yellow, 80%);
+  background-color: $yellow-10;
 }
 
 .util-print-only {

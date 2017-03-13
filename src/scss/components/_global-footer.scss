@@ -4,7 +4,7 @@
 
 .global-footer {
   background-color: $nhs-blue;
-  border-top: $baseline-grid-unit solid shade($nhs-blue, 20);
+  border-top: $baseline-grid-unit solid $dark-blue;
   color: $white;
 
   * {
