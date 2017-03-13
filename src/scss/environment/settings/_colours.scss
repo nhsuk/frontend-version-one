@@ -19,3 +19,24 @@ $red-60: #e87869;
 $red-10: #fbe8e6;
 
 $yellow: #ffb81c;
+
+
+// semantic colour names
+$nhs-blue: $blue;
+$emergency-services-red: $red;
+
+$link-colour: $blue;
+$link-reverse-polarity: $white;
+
+$link-visited-colour: $dark-blue;
+$link-visited-reverse-polarity: $white;
+
+$link-hover-colour: $light-blue;
+$link-hover-reverse-polarity: $lightest-blue;
+
+$link-active-colour: $light-blue;
+$link-active-reverse-polarity: $lightest-blue;
+
+$focus-colour: $yellow;
+
+$button-background: #008a40; // shade($green, 12.5%); for WCAG AA compliance
