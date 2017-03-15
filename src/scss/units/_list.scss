@@ -1,4 +1,4 @@
-@import "../environment/settings/semantic-colours";
+@import "../environment/settings/colours";
 @import "../environment/tools/typography";
 
 ul {
@@ -97,11 +97,11 @@ dl {
       // variations for different coloured backgrounds
       .callout--info &,
       .panel & {
-        border-left-color: $grey-4;
+        border-left-color: $grey-5;
       }
 
       .callout--warning & {
-        border-left-color: tint($yellow, 20%);
+        border-left-color: $yellow-10;
       }
 
       .callout--alert & {

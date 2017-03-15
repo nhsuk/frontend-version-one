@@ -1,6 +1,5 @@
-@import "../environment/settings/semantic-colours";
+@import "../environment/settings/colours";
 @import "../environment/settings/typography";
-@import "../environment/tools/functions";
 @import "../environment/tools/mixins";
 @import "../environment/tools/typography";
 @import "../environment/generic";
@@ -17,28 +16,28 @@
 }
 
 .callout--muted {
-  background-color: $grey-3;
+  background-color: $grey-4;
 }
 
 .callout--info {
-  background-color: $grey-4;
+  background-color: $grey-5;
   border: solid $grey-2;
   border-width: 0 0 0 $baseline-grid-unit;
 }
 
 .callout--attention {
-  border: ($baseline-grid-unit * 3) solid tint($light-blue, 25%);
+  border: $baseline-grid-unit * 2 solid $bright-blue;
 }
 
 .callout--warning {
-  background-color: tint($yellow, 20);
-  border: solid shade($yellow, 20);
+  background-color: $yellow-10;
+  border: solid $yellow-50;
   border-width: $baseline-grid-unit 0;
 }
 
 .callout--alert {
   background-color: $red-10;
-  border-top: $baseline-grid-unit * 3 solid $red;
+  border-top: $baseline-grid-unit * 2 solid $red;
 }
 
 .callout--severe {
