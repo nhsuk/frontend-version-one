@@ -16,7 +16,7 @@
   }
 
   a {
-    @include reverse-polarity;
+    @include link-reverse-polarity;
   }
 }
 
