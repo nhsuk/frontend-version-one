@@ -13,7 +13,7 @@
   }
 }
 
-@mixin reverse-polarity {
+@mixin link-reverse-polarity {
   &:link {
     color: $link-reverse-polarity;
   }

@@ -27,7 +27,7 @@
   }
 
   a {
-    @include reverse-polarity;
+    @include link-reverse-polarity;
   }
 
   // the lobotomized owl
@@ -38,7 +38,7 @@
 }
 
 .local-header__return {
-  @include reverse-polarity;
+  @include link-reverse-polarity;
   background-color: $nhs-blue;
   border: $baseline-grid-unit / 2 solid $blue-50;
   display: inline-block;
