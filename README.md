@@ -74,7 +74,7 @@ Include the compiled css in the head of your page:
 Configure Nunjucks to add this package's template path to your Nunjucks environment:
 
  ```js
- const path = require('path');
+const path = require('path');
 const nunjucksEnv = nunjucks.configure([
   path.resolve(__dirname, '/app/views'),
   path.resolve(__dirname, '/node_modules/nhsuk-frontend/src/templates')
