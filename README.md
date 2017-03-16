@@ -102,6 +102,7 @@ that can be overridden or extended from your template:
   - `body_skiplinks` - wraps container with "skip to content" link (first element inside `body`)
   - `body_notifications` - wraps cookie message container (above `site_header`, after `skiplinks`)
   - `body_site_header` - wraps site header
+  - `body_site_header_service_title` - wraps the service title
   - `body_main_content` - contains main content (inside `main#content`)
   - `body_footer` - wraps site footer container (inside `body > footer`)
     - `body_footer_content` - contains content inside site footer

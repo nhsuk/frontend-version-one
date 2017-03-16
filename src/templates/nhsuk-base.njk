@@ -48,6 +48,11 @@
               <a href="/" class="global-header__link">
                 <img src="{{ asset_path('assets/images/logotype-nhs-mono.png') }}" alt="NHS">
               </a>
+              {% block header_service_title %}
+                {% if serviceTitle %}
+                  <span class="global-header__service-name">{{ serviceTitle }}</span>
+                {% endif %}
+              {% endblock %}
             </div>
           </div>
         </header>
