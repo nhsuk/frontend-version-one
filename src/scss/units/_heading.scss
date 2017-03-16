@@ -1,4 +1,4 @@
-@import "../environment/tools/typography";
+@import "../environment/tools/mixins/typography";
 
 h1 {
   @include bold-font(64);

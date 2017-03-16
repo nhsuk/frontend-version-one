@@ -1,5 +1,7 @@
 @import "../environment/settings/colours";
-@import "../environment/tools/typography";
+@import "../environment/tools/functions/colour";
+@import "../environment/tools/mixins/layout";
+@import "../environment/tools/mixins/typography";
 
 .notification-banner {
   background-color: $grey-5;

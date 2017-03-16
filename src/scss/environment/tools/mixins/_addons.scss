@@ -1,6 +1,5 @@
-@import "../settings/colours";
-@import "../settings/grid-layout";
-@import "../tools/conditionals";
+@import "../../settings/colours";
+@import "./conditionals";
 
 @mixin clearfix {
   @include ie-lte(7) {
@@ -34,28 +33,6 @@
   &:focus {
     outline: 3px solid $focus-colour;
   }
-}
-
-@mixin site-width-container {
-  margin: 0 ($gutter / 2);
-  max-width: $site-width;
-
-  @include ie-lte(8) {
-    width: $site-width;
-  }
-
-
-  @include media(desktop) {
-    margin: 0 $gutter;
-  }
-
-  @include media($min-width: ($site-width + $gutter * 2)) {
-    margin: 0 auto;
-  }
-}
-
-@mixin reading-width {
-  max-width: $measure;
 }
 
 @mixin visuallyhidden {

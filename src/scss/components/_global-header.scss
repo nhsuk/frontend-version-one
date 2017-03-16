@@ -1,6 +1,6 @@
 @import "../environment/settings/colours";
-@import "../environment/settings/typography";
-@import "../environment/tools/mixins";
+@import "../environment/tools/mixins/layout";
+@import "../environment/tools/mixins/typography";
 
 .global-header {
   background-color: $white;
