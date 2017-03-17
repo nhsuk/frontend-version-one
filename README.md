@@ -92,6 +92,20 @@ Then extend your template from NHS.UK base template:
 Base template has a number of [blocks](https://mozilla.github.io/nunjucks/templating.html#block)
 that can be overridden or extended from your template:
 
+#### asset_path
+
+Base template is using `asset_path` global function extensively for all asset references in template. This function is expected to be defined in the app using this package. For example:
+
+```js
+const nunjucksEnv = nunjucks.configure([
+  // ...
+], {
+  // ...
+});
+
+nunjucksEnv.addGlobal('asset_path', filename => filename);
+```
+
 **Nunjucks blocks**
 
 - `head` - contains the whole `head` element
