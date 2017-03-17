@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    window.frctl = {
+        env: 'static'
+    };
+    </script>
+    <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
+    <link rel="shortcut icon" href="../themes/mandelbrot/favicon.ico" type="image/ico">
+
+<link rel="stylesheet" href="../themes/mandelbrot/css/default.css?cachebust=1.1.0" type="text/css">
+
+<link rel="stylesheet" href="../themes/nhsuk/theme.css?cachebust=1.1.0" type="text/css">
+
+
+<title>Mixins | NHS.UK Frontend</title>
+
+</head>
+<body>
+
+
+
+<div class="Frame" id="frame">
+
+    <div class="Frame-header">
+        <header class="Masthead">
+  <div class="Masthead-container">
+    <div class="Masthead-brand">
+      <a href="../index.html">
+        <img class="Masthead-logo" src="../themes/nhsuk/nhs.svg">
+        <span class="Masthead-title">
+          Frontend
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+    </div>
+
+    <div class="Frame-body" data-role="body">
+
+        <div class="Frame-panel Frame-panel--main" data-role="main">
+            <div class="Frame-inner" id="pjax-container">
+            
+
+<div class="Document">
+
+    <div class="Document-header">
+        
+        <h1 class="Document-title">Mixins</h1>
+        
+
+
+        
+    </div>
+
+    <div class="Document-content">
+
+    
+
+<div class="Prose">
+
+
+
+    
+    
+    <h2 id="typography">Typography</h2>
+<h3 id="core-font">core-font</h3>
+<p>Output font settings for one of the core font sizes defined in <a href="https://github.com/nhsuk/frontend/blob/master/src/scss/environment/settings/_typography.scss#L13-L19"><code>$type-settings-map</code></a>.</p>
+<p><strong>Input</strong></p>
+<code class="lang-scss"><pre><span class="hljs-selector-tag">h1</span> {
+  @<span class="hljs-keyword">include</span> core-font(<span class="hljs-number">20</span>);
+}</pre></code><p><strong>Output</strong></p>
+<code class="lang-css"><pre><span class="hljs-selector-tag">h1</span> {
+  <span class="hljs-attribute">font-family</span>: Arial, sans-serif;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">400</span>;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">32px</span>;
+  <span class="hljs-attribute">text-transform</span>: none; }
+  @<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">641px</span>) {
+    <span class="hljs-selector-tag">h1</span> {
+      <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+      <span class="hljs-attribute">line-height</span>: <span class="hljs-number">32px</span>; } }
+  @<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">925px</span>) {
+    <span class="hljs-selector-tag">h1</span> {
+      <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+      <span class="hljs-attribute">line-height</span>: <span class="hljs-number">32px</span>; } }</pre></code><h3 id="bold-font">bold-font</h3>
+<p>Output font settings for one of the core font sizes defined in $type-settings-map (typography.scss) but
+use a bold font weight</p>
+<p><strong>Input</strong></p>
+<code class="lang-scss"><pre><span class="hljs-selector-tag">h1</span> {
+  @<span class="hljs-keyword">include</span> bold-font(<span class="hljs-number">19</span>);
+}</pre></code><p><strong>Output</strong></p>
+<code class="lang-css"><pre><span class="hljs-selector-tag">h1</span> {
+  <span class="hljs-attribute">font-family</span>: Arial, sans-serif;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">600</span>;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">32px</span>;
+  <span class="hljs-attribute">text-transform</span>: none; }
+  @<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">641px</span>) {
+    <span class="hljs-selector-tag">h1</span> {
+      <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+      <span class="hljs-attribute">line-height</span>: <span class="hljs-number">32px</span>; } }
+  @<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">925px</span>) {
+    <span class="hljs-selector-tag">h1</span> {
+      <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+      <span class="hljs-attribute">line-height</span>: <span class="hljs-number">32px</span>; } }</pre></code><h3 id="element-spacing">element-spacing</h3>
+<p>Set the basic spacing between elements and adjust for different screen widths.</p>
+<p><strong>Input</strong></p>
+<code class="lang-scss"><pre>* + * {
+  @<span class="hljs-keyword">include</span> element-spacing;
+}</pre></code><p><strong>Output</strong></p>
+<code class="lang-css"><pre>* + * {
+  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">16px</span>; }
+  @<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">925px</span>) {
+    * + * {
+      <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">32px</span>; } }</pre></code><h3 id="element-padding">element-padding</h3>
+<p>Set basic padding for elements and adjust for different screen widths.</p>
+<p><strong>Input</strong></p>
+<code class="lang-scss"><pre><span class="hljs-selector-class">.page-section</span> {
+  @<span class="hljs-keyword">include</span> element-padding(vertical);
+}</pre></code><p><strong>Output</strong></p>
+<code class="lang-css"><pre><span class="hljs-selector-class">.page-section</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">16px</span> <span class="hljs-number">0</span>; }
+  @<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">925px</span>) {
+    <span class="hljs-selector-class">.page-section</span> {
+      <span class="hljs-attribute">padding</span>: <span class="hljs-number">32px</span> <span class="hljs-number">0</span>; } }</pre></code><h2 id="addons">Addons</h2>
+<h3 id="clearfix">clearfix</h3>
+<p><a href="http://nicolasgallagher.com/micro-clearfix-hack/">Micro clearfix hack</a> to contain floated elements in a container. </p>
+<code class="lang-scss"><pre><span class="hljs-selector-class">.container</span> {
+  @<span class="hljs-keyword">include</span> clearfix;
+}</pre></code><h3 id="reverse-polarity">reverse-polarity</h3>
+<p>Sets anchor and its pseudo classes to the corresponding value of <a href="https://github.com/nhsuk/frontend/blob/master/src/scss/environment/settings/_colours.scss#L44-L54">semantic link colour names</a>.</p>
+<p><strong>Input</strong></p>
+<code class="lang-scss"><pre><span class="hljs-selector-class">.header</span> <span class="hljs-selector-tag">a</span> {
+  @<span class="hljs-keyword">include</span> reverse-polarity;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$nhs-blue</span>;
+}</pre></code><p><strong>Output</strong></p>
+<code class="lang-css"><pre><span class="hljs-selector-class">.header</span> <span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#005eb8</span>; }
+  <span class="hljs-selector-class">.header</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:link</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>; }
+  <span class="hljs-selector-class">.header</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:visited</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>; }
+  <span class="hljs-selector-class">.header</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#d4efff</span>; }
+  <span class="hljs-selector-class">.header</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:active</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#d4efff</span>; }
+  <span class="hljs-selector-class">.header</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span> {
+    <span class="hljs-attribute">outline</span>: <span class="hljs-number">3px</span> solid <span class="hljs-number">#ffb81c</span>; }</pre></code><h3 id="visuallyhidden">visuallyhidden</h3>
+<p>Visually hides content from user while keeping it accessible to screen readers. Based on <a href="https://snook.ca/archives/html_and_css/hiding-content-for-accessibility">Snook’s method</a>
+and <a href="https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L128-L139">HTML5 Boilerplate</a>.</p>
+<code class="lang-scss"><pre><span class="hljs-selector-tag">button</span> <span class="hljs-selector-class">.help-text</span> {
+  @<span class="hljs-keyword">include</span> visuallyhidden; 
+}</pre></code><h2 id="layout">Layout</h2>
+<h3 id="grid-column">grid-column</h3>
+<p>Creates a cross browser grid column with a standardised gutter between the columns.</p>
+<code class="lang-scss"><pre><span class="hljs-selector-tag">div</span> {
+  <span class="hljs-comment">// Column one quarter of container</span>
+  @<span class="hljs-keyword">include</span> grid-column(<span class="hljs-number">1</span> / 4);
+}
+
+<span class="hljs-selector-tag">div</span> {
+  <span class="hljs-comment">// Forcing column to be full width at desktop</span>
+  @<span class="hljs-keyword">include</span> grid-column(<span class="hljs-number">1</span> / 2, <span class="hljs-variable">$full-width</span>: desktop);
+}
+
+<span class="hljs-selector-tag">div</span> {
+  <span class="hljs-comment">// Float column to the right</span>
+  @<span class="hljs-keyword">include</span> grid-column(<span class="hljs-number">1</span> / 2, <span class="hljs-variable">$float</span>: right);
+}</pre></code><h3 id="grid-row">grid-row</h3>
+<p>Creates container for grid columns.</p>
+<code class="lang-scss"><pre><span class="hljs-selector-class">.row</span> {
+  @<span class="hljs-keyword">include</span> grid-row;
+}</pre></code><h3 id="site-width-container">site-width-container</h3>
+<p>Creates a container for the site with predefined max-width (as defined in <a href="https://github.com/nhsuk/frontend/blob/master/src/scss/environment/settings/_layout.scss#L3"><code>$site-width</code></a>)</p>
+<code class="lang-scss"><pre><span class="hljs-selector-class">.container</span> {
+  @<span class="hljs-keyword">include</span> site-width-container;
+}</pre></code><h3 id="reading-width">reading-width</h3>
+<p>Set the predefined max width on a container for comfortable reading (as defined in <a href="https://github.com/nhsuk/frontend/blob/master/src/scss/environment/settings/_typography.scss#L11"><code>$measure</code></a>)</p>
+<code class="lang-scss"><pre><span class="hljs-selector-class">.container</span> {
+  @<span class="hljs-keyword">include</span> reading-width;
+}</pre></code><h2 id="conditionals">Conditionals</h2>
+<h3 id="media">media</h3>
+<p>Block include to support conditional content for different screen sizes. Based on a mobile first approach.</p>
+<p><strong>Input</strong></p>
+<code class="lang-scss"><pre><span class="hljs-selector-tag">div</span> {
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+
+  @<span class="hljs-keyword">include</span> media(tablet){
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">30%</span>;
+    <span class="hljs-attribute">float</span>: left;
+  }
+}</pre></code><p><strong>Output</strong></p>
+<code class="lang-css"><pre><span class="hljs-selector-tag">div</span> {
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid; }
+  @<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">641px</span>) {
+    <span class="hljs-selector-tag">div</span> {
+      <span class="hljs-attribute">width</span>: <span class="hljs-number">30%</span>;
+      <span class="hljs-attribute">float</span>: left; } }</pre></code><h3 id="ie-lte">ie-lte</h3>
+<p>Use conditional content for versions of IE and lower. Designed to be used in separate IE-specific files which contain
+IE variables:</p>
+<code class="lang-scss"><pre><span class="hljs-variable">$is-ie</span>: true;
+<span class="hljs-variable">$ie-version</span>: <span class="hljs-number">7</span>;</pre></code><p><strong>Input</strong></p>
+<code class="lang-scss"><pre><span class="hljs-selector-class">.panel</span> {
+  <span class="hljs-attribute">max-width</span>: <span class="hljs-variable">$site-width</span>;
+
+  @<span class="hljs-keyword">include</span> ie-lte(<span class="hljs-number">8</span>) {
+    <span class="hljs-attribute">width</span>: <span class="hljs-variable">$site-width</span>;
+  }
+}</pre></code><p><strong>Output for IE&lt;8</strong></p>
+<code class="lang-css"><pre><span class="hljs-selector-class">.panel</span> {
+  <span class="hljs-attribute">max-width</span>: <span class="hljs-number">960px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">960px</span>;
+}</pre></code><p><strong>Output for other browsers</strong></p>
+<code class="lang-css"><pre><span class="hljs-selector-class">.panel</span> {
+  <span class="hljs-attribute">max-width</span>: <span class="hljs-number">960px</span>;
+}</pre></code><h3 id="ie">ie</h3>
+<p>Use conditional content for specific version of IE. Same as <a href="#ie-lte"><code>ie-lte(8)</code></a> it’s designed to be used in
+separate IE-specific files.</p>
+<code class="lang-scss"><pre><span class="hljs-selector-tag">span</span> {
+  <span class="hljs-attribute">display</span>: inline-block;
+
+  @<span class="hljs-keyword">include</span> ie(<span class="hljs-number">6</span>) {
+    <span class="hljs-attribute">display</span>: inline;
+    zoom: <span class="hljs-number">1</span>;
+  }
+}</pre></code><h2 id="components">Components</h2>
+<h3 id="button">button</h3>
+<p>Mixin and defaults for making buttons.</p>
+<p>Adapted from <a href="https://github.com/alphagov/govuk_frontend_toolkit/blob/master/stylesheets/design-patterns/_buttons.scss">GOV.UK Elements buttons</a>.</p>
+<code class="lang-scss"><pre><span class="hljs-selector-class">.button</span>{
+  @<span class="hljs-keyword">include</span> button(<span class="hljs-variable">$green</span>);
+}
+<span class="hljs-selector-class">.button-secondary</span>{
+  @<span class="hljs-keyword">include</span> button(<span class="hljs-variable">$grey-3</span>);
+}
+<span class="hljs-selector-class">.button-warning</span>{
+  @<span class="hljs-keyword">include</span> button(<span class="hljs-variable">$red</span>);
+}</pre></code>
+    
+
+
+</div>
+
+
+
+    </div>
+
+</div>
+
+
+            </div>
+        </div>
+
+        <div class="Frame-handle" data-role="frame-resize-handle"></div>
+        
+        <div class="Frame-panel Frame-panel--sidebar" data-role="sidebar">
+            <nav class="Navigation">
+
+    
+<div class="Navigation-group">
+
+<div class="Tree" data-behaviour="tree" id="tree-docs">
+    <h3 class="Tree-title">documentation</h3>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../index.html" data-pjax>
+                <span>Overview</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="functions.html" data-pjax>
+                <span>Functions</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity is-current" data-state="current" data-role="item">
+            <a class="Tree-entityLink" href="" data-pjax>
+                <span>Mixins</span>
+                
+            </a>
+        </li>
+        
+    
+
+    </ul>
+</div>
+
+</div>
+
+
+
+    
+<div class="Navigation-group">
+
+<div class="Tree" data-behaviour="tree" id="tree-components">
+    <h3 class="Tree-title">components</h3>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/local-header.html" data-pjax>
+                <span>Local Header</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-link-list">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Link List</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/link-list--default.html" data-pjax>
+                <span>Default</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/link-list--half-column.html" data-pjax>
+                <span>Half Column</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/link-list--numbered.html" data-pjax>
+                <span>Numbered</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/button.html" data-pjax>
+                <span>Button</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-callout">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Callout</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/callout--default.html" data-pjax>
+                <span>Default</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/callout--info.html" data-pjax>
+                <span>Info</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/callout--attention.html" data-pjax>
+                <span>Attention</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/callout--warning.html" data-pjax>
+                <span>Warning</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/callout--alert.html" data-pjax>
+                <span>Alert</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/callout--severe.html" data-pjax>
+                <span>Severe</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/callout--error.html" data-pjax>
+                <span>Error</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/callout--muted.html" data-pjax>
+                <span>Muted</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/callout--compact.html" data-pjax>
+                <span>Compact</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-layouts">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Layouts</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/base-template.html" data-pjax>
+                <span>Base Template</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+    </ul>
+</div>
+
+</div>
+
+
+
+</nav>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="../themes/mandelbrot/js/mandelbrot.js?cachebust=1.1.0"></script>
+
+
+
+</body>
+</html>
