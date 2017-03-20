@@ -984,6 +984,36 @@ table {
   margin-left: 16px;
   margin-top: 0; }
 
+.link-list__row {
+  zoom: 1;
+  margin: 0 -16px; }
+  .link-list__row:after {
+    clear: both;
+    content: "";
+    display: table; }
+  .page-section .link-list__row > *,
+  .local-header .link-list__row > * {
+    margin-top: 0; }
+
+.link-list {
+  list-style: none;
+  padding-left: 0; }
+
+.link-list--numbered {
+  list-style: decimal; }
+  .link-list--numbered .link-list__item {
+    margin-left: 1.2em; }
+
+.link-list--one-half {
+  display: block;
+  padding: 0 16px;
+  float: left;
+  width: 50%;
+  width: 464px; }
+  .link-list--one-half + .link-list--one-half {
+    margin-top: 8px;
+    margin-top: 0; }
+
 .local-header {
   margin: 0 16px;
   max-width: 960px;
