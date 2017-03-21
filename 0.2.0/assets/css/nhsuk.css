@@ -632,6 +632,25 @@ table {
   border-spacing: 0;
   margin: 16px 0 32px;
   width: 100%; }
+  table caption {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    text-transform: none;
+    margin: 0 0 16px;
+    text-align: left; }
+    @media (min-width: 641px) {
+      table caption {
+        font-size: 24px;
+        line-height: 32px; } }
+    @media (min-width: 925px) {
+      table caption {
+        font-size: 24px;
+        line-height: 32px; } }
+    @media (min-width: 641px) {
+      table caption {
+        margin-bottom: 32px; } }
   table th,
   table td {
     font-family: Arial, sans-serif;
@@ -695,6 +714,7 @@ table {
   text-align: center;
   text-decoration: none;
   width: 100%;
+  border-radius: 0;
   color: #fff; }
   @media (min-width: 641px) {
     .button {
@@ -772,6 +792,7 @@ table {
   text-align: center;
   text-decoration: none;
   width: 100%;
+  border-radius: 0;
   color: #231f20; }
   @media (min-width: 641px) {
     .button--secondary {
@@ -849,6 +870,7 @@ table {
   text-align: center;
   text-decoration: none;
   width: 100%;
+  border-radius: 0;
   color: #fff; }
   @media (min-width: 641px) {
     .button--cancel {
