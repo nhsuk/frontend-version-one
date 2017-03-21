@@ -35,6 +35,7 @@
   text-align: center;
   text-decoration: none;
   width: 100%;
+  border-radius: 0;
 
   @include media(tablet) {
     width: auto;
