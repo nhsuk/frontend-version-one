@@ -37,6 +37,8 @@ Build and deploy docs to GitHub pages:
 npm run deploy
 ```
 
+Make sure the version in `package.json` is bumped for each release as the docs are generated for each version so they can be inspected retrospectively.
+
 ## Usage
 
 It assumes that your front-end is a Node app with Nunjucks templates and Sass. Install this package with NPM:
