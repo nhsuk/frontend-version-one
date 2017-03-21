@@ -1,0 +1,21 @@
+@import "../settings/colours";
+@import "../settings/typography";
+
+html,
+body,
+button,
+input,
+table,
+td,
+th {
+  font-family: $nhs-font-stack;
+}
+
+html {
+  background-color: $nhs-blue;
+  color: $black;
+}
+
+body {
+  background-color: $white;
+}
