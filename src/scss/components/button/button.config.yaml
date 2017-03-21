@@ -13,3 +13,7 @@ variants:
     label: Cancel
     href: /
     mods: [cancel]
+- name: input
+  context:
+    label: Submit
+    type: submit

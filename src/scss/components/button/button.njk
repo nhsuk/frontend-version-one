@@ -1,5 +1,7 @@
 {%- if href -%}
 <a class="button{% for mod in mods %} button--{{ mod }}{% endfor %}" href="{{ href }}">{{ label }}</a>
+{% elseif type %}
+<input type="{{ type }}" class="button" value="{{ label }}">
 {%- else -%}
 <button class="button{% for mod in mods %} button--{{ mod }}{% endfor %}"{{ " type=\"submit\"" if submit }}{{ " disabled" if disabled }}>{{ label }}</button>
 {%- endif -%}
