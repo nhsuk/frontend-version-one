@@ -71,6 +71,20 @@ Include the compiled css in the head of your page:
 <link href="[your asset path]/nhsuk.css" media="screen" rel="stylesheet" type="text/css">
 ```
 
+The package uses [node-sass-import-once](https://github.com/at-import/node-sass-import-once) module to enable `_index.scss` imports and remove duplicates. If you decide to include individual Sass files make sure your configure your Sass to use custom importer:
+
+```js
+sass({
+  includePaths: SASS_PATHS,
+  outputStyle: isProduction ? 'compressed' : 'expanded',
+  importer: importOnce,
+  importOnce: {
+    index: true,
+    css: true
+  }
+}
+```
+
 ### Templates
 
 Configure Nunjucks to add this package's template path to your Nunjucks environment:
